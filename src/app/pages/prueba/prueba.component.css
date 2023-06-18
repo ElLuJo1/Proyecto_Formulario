@@ -1,0 +1,78 @@
+.form_prueba {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.39);
+  background-color: rgba(219, 219, 219, 0.32);
+}
+
+.form_prueba input,
+.form_prueba nz-select,
+.form_prueba nz-date-picker,
+.form_prueba textarea {
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form_prueba button {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form_prueba button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.form_prueba th,
+.form_prueba td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-container {
+  max-width: 90%;
+  margin: 0 auto;
+
+}
+
+.table-container th,
+.table-container td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+
+}
+
+.table-container th {
+  background-color: #f2f2f2;
+}
+
+.table-container td:last-child {
+  text-align: center;
+}
+
+.table-container a {
+  margin-right: 5px;
+  color: blue;
+  cursor: pointer;
+}
+
+.table-container a:hover {
+  text-decoration: underline;
+}
+
+
+
+

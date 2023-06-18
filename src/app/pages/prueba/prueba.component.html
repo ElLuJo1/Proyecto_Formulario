@@ -1,0 +1,53 @@
+
+<div class="form_prueba">
+  <input type="text" [(ngModel)]="reserva.nombreCliente" nz-input placeholder="Nombre del cliente" />
+  <input type="text" [(ngModel)]="reserva.apellido" nz-input placeholder="Apellido del cliente" />
+  <input type="tel" [(ngModel)]="reserva.telefono" nz-input placeholder="Teléfono de contacto" />
+  <input type="number" [(ngModel)]="reserva.numeroPersonas" nz-input placeholder="Número de personas" />
+  <nz-select [(ngModel)]="reserva.tipoHabitacion" nzPlaceHolder="Seleccionar tipo de habitación">
+    <nz-option *ngFor="let tipo of listaTiposHabitacion" [nzValue]="tipo" [nzLabel]="tipo"></nz-option>
+  </nz-select>
+  <nz-date-picker [(ngModel)]="reserva.fechaEntrada" nzFormat="yyyy-MM-dd" nzPlaceHolder="Fecha de entrada"></nz-date-picker>
+  <nz-date-picker [(ngModel)]="reserva.fechaSalida" nzFormat="yyyy-MM-dd" nzPlaceHolder="Fecha de salida"></nz-date-picker>
+  <textarea [(ngModel)]="reserva.requerimientos" nz-input rows="4" placeholder="Requerimientos o solicitudes adicionales"></textarea>
+  <button [disabled]="!reserva.nombreCliente || !reserva.apellido || !reserva.telefono || !reserva.numeroPersonas || !reserva.tipoHabitacion || !reserva.fechaEntrada || !reserva.fechaSalida" nzType="primary" (click)="guardarReserva()">Guardar</button>
+</div>
+
+<div class="table-container">
+  <nz-table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Teléfono</th>
+        <th>Número de personas</th>
+        <th>Habitación</th>
+        <th>Fecha de entrada</th>
+        <th>Fecha de salida</th>
+        <th>Solicitud</th>
+        <th>Hora de reserva</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reserva of listaReservas; let i = index">
+        <td>{{ reserva.nombreCliente }}</td>
+        <td>{{ reserva.apellido }}</td>
+        <td>{{ reserva.telefono }}</td>
+        <td>{{ reserva.numeroPersonas }}</td>
+        <td>{{ reserva.tipoHabitacion }}</td>
+        <td>{{ reserva.fechaEntrada | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ reserva.fechaSalida | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ reserva.requerimientos }}</td>
+        <td>{{ reserva.horaReserva }}</td>
+        <td>
+          <a (click)="eliminarReserva(i)">Eliminar</a>
+          <a (click)="editarReserva(reserva)">Actualizar</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+
+
+
